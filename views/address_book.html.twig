@@ -16,6 +16,8 @@
                     <h2> {{ contact.getFirstName }} {{ contact.getLastName}} </h2>
                         <ul>
                             <li>{{ address.getStreet}} {{ address.getCity }} {{ address.getState }} {{ address.getZip }}</li>
+                            <a href="tel:{{ contact.getPhone }}">{{ contact.getPhone }}</a>
+                            <a href="mailto:{{ contact.getEmail }}">{{ contact.getEmail }}</a>
                         </ul>
                 {% endfor %}
             </ul>
@@ -41,7 +43,11 @@
         <input id='state' name='state' type='text'></br>
         <label for='zip'>Zip:</label>
         <input id='zip' name='zip' type='text'></br>
-
+        <h4>Contact Info:</h4>
+        <label for='phone'>Phone:</label>
+        <input id='phone' name='phone' type='text'></br>
+        <label for='email'>Email:</label>
+        <input id='email' name='email' type='email'></br>
 
         <button type='submit'>Add Contact</button>
     </form>

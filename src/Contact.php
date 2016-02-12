@@ -5,12 +5,16 @@ class Contact
     private $first_name;
     private $last_name;
     private $address;
+    private $phone;
+    private $email;
     /******Constructor******/
-    function __construct($first_name, $last_name, $address)
+    function __construct($first_name, $last_name, $address, $phone, $email)
     {
         $this->first_name = $first_name;
         $this->last_name = $last_name;
         $this->address = $address;
+        $this->phone = $phone;
+        $this->email = $email;
     }
     /******Setters******/
     function setFirstName($new_first_name)
@@ -25,6 +29,14 @@ class Contact
     {
         $this->address = $new_address;
     }
+    function setPhone($new_phone)
+    {
+        $this->phone = $new_phone;
+    }
+    function setEmail($new_email)
+    {
+        $this->email = $new_email;
+    }
     /******Getters******/
     function getFirstName()
     {
@@ -37,6 +49,14 @@ class Contact
     function getAddress()
     {
         return $this->address;
+    }
+    function getPhone()
+    {
+        return $this->phone;
+    }
+    function getEmail()
+    {
+        return $this->email;
     }
     /******Functions******/
     //save
