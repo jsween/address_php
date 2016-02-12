@@ -13,5 +13,9 @@
         'twig.path' => __DIR__.'/../views'
     ));
 
+    $app->get("/", function() use ($app) {
+        return $app['twig']->render('address_book.html.twig', array('contacts' => Contact::getAll()));
+    });
+
     return $app;
  ?>
