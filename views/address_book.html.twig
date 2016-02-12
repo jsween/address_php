@@ -12,8 +12,11 @@
             <p>Here Are Your Contacts:</p>
             <ul>
                 {% for contact in contacts %}
+                {% set address = contact.getAddress %}
                     <h2> {{ contact.getFirstName }} {{ contact.getLastName}} </h2>
-
+                        <ul>
+                            <li>{{ address.getStreet}} {{ address.getCity }} {{ address.getState }} {{ address.getZip }}</li>
+                        </ul>
                 {% endfor %}
             </ul>
         {% else %}
@@ -43,7 +46,7 @@
         <button type='submit'>Add Contact</button>
     </form>
     <form action='/delete_contacts' method='post'>
-        <button type='submit'>Clear</button>
+        <button type='submit'>Clear All Contacts</button>
     </form>
     <div class="center" id="footer">
         <h5>&copy 2016 Sweeney</h5>
