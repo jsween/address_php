@@ -4,14 +4,16 @@ class Contact
     /******Properties******/
     private $first_name;
     private $last_name;
+    private $image_path;
     private $address;
     private $phone;
     private $email;
     /******Constructor******/
-    function __construct($first_name, $last_name, $address, $phone, $email)
+    function __construct($first_name, $last_name, $image_path, $address, $phone, $email)
     {
         $this->first_name = $first_name;
         $this->last_name = $last_name;
+        $this->image_path = $image_path;
         $this->address = $address;
         $this->phone = $phone;
         $this->email = $email;
@@ -25,17 +27,21 @@ class Contact
     {
         $this->last_name = (string) $new_last_name;
     }
+    function setImagePath($new_image_path)
+    {
+        $this->image_path = (string) $new_image_path;
+    }
     function setAddress($new_address)
     {
         $this->address = $new_address;
     }
     function setPhone($new_phone)
     {
-        $this->phone = $new_phone;
+        $this->phone = (string) $new_phone;
     }
     function setEmail($new_email)
     {
-        $this->email = $new_email;
+        $this->email = (string) $new_email;
     }
     /******Getters******/
     function getFirstName()
@@ -45,6 +51,10 @@ class Contact
     function getLastName()
     {
         return $this->last_name;
+    }
+    function getImagePath()
+    {
+        return $this->image_path;
     }
     function getAddress()
     {
@@ -74,6 +84,5 @@ class Contact
     {
         $_SESSION['list_of_contacts'] = array();
     }
-
 }
  ?>

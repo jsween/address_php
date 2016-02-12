@@ -13,11 +13,12 @@
             <ul>
                 {% for contact in contacts %}
                 {% set address = contact.getAddress %}
+                    <img src="{{ contact.getImagePath }}" alt="{{ contact.getFirstName }}" />
                     <h2> {{ contact.getFirstName }} {{ contact.getLastName}} </h2>
                         <ul>
                             <li>{{ address.getStreet}} {{ address.getCity }} {{ address.getState }} {{ address.getZip }}</li>
-                            <a href="tel:{{ contact.getPhone }}">{{ contact.getPhone }}</a>
-                            <a href="mailto:{{ contact.getEmail }}">{{ contact.getEmail }}</a>
+                            <p>Call: <a href="tel:{{ contact.getPhone }}">{{ contact.getPhone }}</a></p><br>
+                            <p>Email: <a href="mailto:{{ contact.getEmail }}">{{ contact.getEmail }}</p></a>
                         </ul>
                 {% endfor %}
             </ul>
@@ -48,6 +49,9 @@
         <input id='phone' name='phone' type='text'></br>
         <label for='email'>Email:</label>
         <input id='email' name='email' type='email'></br>
+        <h4>Photo:</h4>
+        <label for='image_path'>URL:</label>
+        <input id='image_path' name='image_path' type='url'></br>
 
         <button type='submit'>Add Contact</button>
     </form>

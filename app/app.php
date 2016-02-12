@@ -19,7 +19,7 @@
     });
     //created a contact page
     $app->post("/create_contact", function() use ($app) {
-        $contact = new Contact($_POST['first_name'], $_POST['last_name'], new Address($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip']), $_POST['phone'], $_POST['email']);
+        $contact = new Contact($_POST['first_name'], $_POST['last_name'], $_POST['image_path'], new Address($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip']), $_POST['phone'], $_POST['email']);
         $contact->save();
         return $app['twig']->render('created_contact.html.twig', array('newcontact' => $contact));
     });

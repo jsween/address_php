@@ -3,6 +3,11 @@
   font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 }
 
+img {
+    width: 150px;
+    border-radius: 100px;
+    border: 2px solid #333;
+}
 .form label {
     width: 240px;
 }
