@@ -8,56 +8,66 @@
         <h1>ADDRESS BOOK</h1>
     </div>
     <div id="wrapper">
-        {% if contacts is not empty %}
-            <p>Here Are Your Contacts:</p>
-            <ul>
-                {% for contact in contacts %}
-                {% set address = contact.getAddress %}
-                    <img src="{{ contact.getImagePath }}" alt="{{ contact.getFirstName }}" />
-                    <h2> {{ contact.getFirstName }} {{ contact.getLastName}} </h2>
-                        <ul>
-                            <li>{{ address.getStreet}} {{ address.getCity }} {{ address.getState }} {{ address.getZip }}</li>
-                            <p>Call: <a href="tel:{{ contact.getPhone }}">{{ contact.getPhone }}</a></p><br>
-                            <p>Email: <a href="mailto:{{ contact.getEmail }}">{{ contact.getEmail }}</p></a>
-                        </ul>
-                {% endfor %}
-            </ul>
-        {% else %}
-        <div id="welcome">
-            <h2>Lets Get Set Up Your Address Book!</h2>
+        <div class="row">
+            {% if contacts is not empty %}
+            <div class="col-xs-8" id="contacts">
+                <form action='/delete_contacts' method='post'>
+                    <button class='btn danger' type='submit'>Clear All Contacts</button>
+                </form>
+                <input type="search" id="mySearch" placeholder="Search for a Contact">
+                <h1>Here Are Your Contacts:</h1>
+                <ul>
+                    {% for contact in contacts %}
+                    {% set address = contact.getAddress %}
+                    <hr>
+                        <div class="single_contact">
+                            <img src="{{ contact.getImagePath }}" alt="{{ contact.getFirstName }}" />
+                            <h2> {{ contact.getFirstName }} {{ contact.getLastName}} </h2>
+                            <ul>
+                                <li>{{ address.getStreet}} {{ address.getCity }} {{ address.getState }} {{ address.getZip }}</li>
+                                <p>Call: <a href="tel:{{ contact.getPhone }}">{{ contact.getPhone }}</a></p><br>
+                                <p>Email: <a href="mailto:{{ contact.getEmail }}">{{ contact.getEmail }}</a></p><br>
+                                <a href="https://www.google.com/maps/place/{{ address.getStreet }}+{{ address.getCity }}+{{ address.getState }}/" target="_blank">Find in Google Maps</a>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+            <div id="welcome">
+                <h2>Lets Get Set Up Your Address Book!</h2>
+            </div>
+            {% endif %}
+            <div class="col-xs-4" id="form">
+                <form class="form" action='/create_contact' method='post'>
+                    <h4>Name:</h4>
+                    <label for='first_name'>First:</label>
+                    <input id='first_name' name='first_name' type='text' required></br>
+                    <label for='last_name'>Last:</label>
+                    <input id='last_name' name='last_name' type='text'></br>
+                    <h4>Address:</h4>
+                    <label for='street'>Street:</label>
+                    <input id='street' name='street' type='text'></br>
+                    <label for='city'>City:</label>
+                    <input id='city' name='city' type='text'></br>
+                    <label for='state'>State:</label>
+                    <input id='state' name='state' type='text'></br>
+                    <label for='zip'>Zip:</label>
+                    <input id='zip' name='zip' type='text'></br>
+                    <h4>Contact Info:</h4>
+                    <label for='phone'>Phone:</label>
+                    <input id='phone' name='phone' type='text'></br>
+                    <label for='email'>Email:</label>
+                    <input id='email' name='email' type='email'></br>
+                    <h4>Photo:</h4>
+                    <label for='image_path'>URL:</label>
+                    <input id='image_path' name='image_path' type='url'></br>
+
+                    <button class="btn" type='submit'>Add Contact</button>
+                </form>
+            </div>
         </div>
-        {% endif %}
     </div>
-
-    <form class="form" action='/create_contact' method='post'>
-        <h4>Name:</h4>
-        <label for='first_name'>First:</label>
-        <input id='first_name' name='first_name' type='text'></br>
-        <label for='last_name'>Last:</label>
-        <input id='last_name' name='last_name' type='text'></br>
-        <h4>Address:</h4>
-        <label for='street'>Street:</label>
-        <input id='street' name='street' type='text'></br>
-        <label for='city'>City:</label>
-        <input id='city' name='city' type='text'></br>
-        <label for='state'>State:</label>
-        <input id='state' name='state' type='text'></br>
-        <label for='zip'>Zip:</label>
-        <input id='zip' name='zip' type='text'></br>
-        <h4>Contact Info:</h4>
-        <label for='phone'>Phone:</label>
-        <input id='phone' name='phone' type='text'></br>
-        <label for='email'>Email:</label>
-        <input id='email' name='email' type='email'></br>
-        <h4>Photo:</h4>
-        <label for='image_path'>URL:</label>
-        <input id='image_path' name='image_path' type='url'></br>
-
-        <button type='submit'>Add Contact</button>
-    </form>
-    <form action='/delete_contacts' method='post'>
-        <button type='submit'>Clear All Contacts</button>
-    </form>
     <div class="center" id="footer">
         <h5>&copy 2016 Sweeney</h5>
     </div>
