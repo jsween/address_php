@@ -1,6 +1,8 @@
+/**********ELEMENTS***********/
 * {
-  color: #333333;
-  font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+    margin: 0;
+    color: #333333;
+    font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 }
 
 img {
@@ -8,8 +10,33 @@ img {
     border-radius: 100px;
     border: 2px solid #333;
 }
-.form label {
-    width: 240px;
+/**********HEADER***********/
+#header {
+    padding: 20px 0 15px;
+    background-color: #FAAF00;
+}
+
+#header h1 {
+    font-size: 2.4em;
+    font-family: Impact, Charcoal, sans-serif;
+    color: #057A9C;
+}
+/**********HEADER***********/
+#wrapper {
+    background-color: #ddd;
+}
+/**********FOOTER***********/
+#footer {
+    padding: 5px 0 20px;
+    background-color: #C68B00;
+}
+#footer h5 {
+    font-size: 1.2em;
+    color: #057A9C;
+}
+/**********CLASSES**********/
+.btn {
+    min-width: 100px;
 }
 
 .center {
