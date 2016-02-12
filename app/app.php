@@ -29,7 +29,7 @@
     });
     //view results of search page
     $app->get("/results", function() use($app) {
-        $user_contact = strtolower($_GET['user_artist']);
+        $user_contact = strtolower($_GET['user_contact']);
         $contacts = $_SESSION['list_of_contacts'];
         $contacts_match = $_SESSION['matching_contacts'];
         foreach ($contacts as $contact) {
@@ -37,7 +37,6 @@
                 array_push($contacts_match, $contact);
             }
         }
-        var_dump($contacts_match);
         return $app['twig']->render('matching_contacts.html.twig', array('matching_contacts' => $contacts_match));
     });
     //delete all contacts page

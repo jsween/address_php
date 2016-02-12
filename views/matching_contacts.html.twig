@@ -9,6 +9,13 @@
     </div>
     <div class="center" id="wrapper">
         <h1>Your Results</h1>
+        {% if matching_contacts is not empty %}
+            {% for contact in matching_contacts %}
+                <h4>{{ contact.getFirstName }}</h4>
+            {% endfor %}
+        {% else %}
+            <h2>No Results!</h2>
+        {% endif %}
         <form action='/'>
             <button class="btn" type='submit'>Home</button>
         </form>
