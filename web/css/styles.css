@@ -6,15 +6,29 @@
     list-style: none;
 }
 
+a {
+    color: #9A1500;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FA2200;
+}
+
 img {
     width: 150px;
     border-radius: 100px;
     border: 2px solid #9A1500;
 }
+
+body {
+    background-color: #449ED8;
+}
 /**********HEADER***********/
 #header {
     padding: 20px 0 15px;
     background-color: #FAAF00;
+    border-bottom: 10px solid #218DAC;
 }
 
 #header h1 {
@@ -61,6 +75,11 @@ img {
     font-weight: bold;
 }
 
+#contacts p {
+    color: #eee;
+}
+
+
 .single_contact {
     padding: 9px 0 4px;
 }
@@ -68,7 +87,7 @@ img {
 #footer {
     border-top: 5px solid #9A6C00;
     clear: both;
-    padding: 5px 0 20px;
+    padding: 5px 0 1000px;
     background-color: #C68B00;
 }
 
