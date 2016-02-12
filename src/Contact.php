@@ -5,7 +5,7 @@ class Contact
     private $first_name;
     private $last_name;
     /******Constructor******/
-    function __construct($first_name)
+    function __construct($first_name, $last_name)
     {
         $this->first_name = $first_name;
         $this->last_name = $last_name;
@@ -26,7 +26,7 @@ class Contact
     }
     function getLastName()
     {
-        return $this->Last_name;
+        return $this->last_name;
     }
     /******Functions******/
     //save
