@@ -26,12 +26,10 @@
                         <div class="single_contact">
                             <img src="{{ contact.getImagePath }}" alt="{{ contact.getFirstName }}" />
                             <h2> {{ contact.getFirstName }} {{ contact.getLastName}} </h2>
-                            <ul>
-                                <a href="https://www.google.com/maps/place/{{ address.getStreet }}+{{ address.getCity }}+{{ address.getState }}+{{ address.getZip }}/" target="_blank">{{ address.getStreet }} {{ address.getCity }} {{ address.getState }} {{ address.getZip }}</a>
-                                <p>Call: <a href="tel:{{ contact.getPhone }}">{{ contact.getPhone }}</a></p><br>
-                                <p>Email: <a href="mailto:{{ contact.getEmail }}">{{ contact.getEmail }}</a></p><br>
-                                <a href="https://www.google.com/maps/dir//{{ address.getStreet }}+{{ address.getCity }}+{{ address.getState }}/" target="_blank">Get Directions</a>
-                            </ul>
+                            <a href="https://www.google.com/maps/place/{{ address.getStreet }}+{{ address.getCity }}+{{ address.getState }}+{{ address.getZip }}/" target="_blank">{{ address.getStreet }} {{ address.getCity }} {{ address.getState }} {{ address.getZip }}</a>
+                            <p>Call: <a href="tel:{{ contact.getPhone }}">{{ contact.getPhone }}</a></p><br>
+                            <p>Email: <a href="mailto:{{ contact.getEmail }}">{{ contact.getEmail }}</a></p><br>
+                            <a href="https://www.google.com/maps/dir//{{ address.getStreet }}+{{ address.getCity }}+{{ address.getState }}/" target="_blank">Get Directions</a>
                         </div>
                     {% endfor %}
                 </ul>

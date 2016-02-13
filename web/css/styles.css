@@ -57,8 +57,12 @@ body {
     float:left;
 }
 
-#form label, #form input {
+#form label {
     margin: 2px;
+}
+
+#form input {
+    float: right;
 }
 
 #contacts {

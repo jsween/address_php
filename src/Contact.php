@@ -13,7 +13,7 @@ class Contact
     {
         $this->first_name = $first_name;
         $this->last_name = $last_name;
-        $this->image_path = $image_path = '/images/default.jpg';
+        $this->image_path = $image_path;
         $this->address = $address;
         $this->phone = $phone;
         $this->email = $email;
