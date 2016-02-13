@@ -102,6 +102,7 @@ body {
     padding: 2px 20px;
     border-radius: 3px;
     min-width: 150px;
+    background-color: #FFCD58;
 }
 
 .danger {
